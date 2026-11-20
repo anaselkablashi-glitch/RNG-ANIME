@@ -4,11 +4,14 @@ import argparse
 import asyncio
 import json
 import logging
+import sys
 
 from .config import load_config
 
 
 def main() -> None:
+    for stream in (sys.stdout, sys.stderr):  # Windows consoles choke on emoji otherwise
+        stream.reconfigure(encoding="utf-8", errors="replace")
     ap = argparse.ArgumentParser(prog="signalbot")
     ap.add_argument("--config", default="config.toml")
     sub = ap.add_subparsers(dest="cmd", required=True)

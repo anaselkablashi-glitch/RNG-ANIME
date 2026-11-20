@@ -47,14 +47,15 @@ and written to `signalbot.log`.
    "Add Python to PATH".
 2. Install MetaTrader 5, log in to a **demo** account, and switch on the
    **Algo Trading** button. Leave MT5 running.
-3. In this folder, run `pip install -r requirements.txt`.
-4. Get a Telegram `api_id` and `api_hash` at <https://my.telegram.org> under
+3. Get a Telegram `api_id` and `api_hash` at <https://my.telegram.org> under
    "API development tools".
-5. Copy `config.example.toml` to `config.toml` and fill in your MT5 account
-   number, the Telegram keys, and the symbol names from your MT5 Market Watch.
-6. Run `python -m signalbot chats` (it asks for your phone number and a login
-   code the first time) and copy the group's name into `chat` in `config.toml`.
-7. Run `python -m signalbot run`.
+4. Double-click `setup.bat`. It installs what the bot needs, runs the
+   self-tests and opens `config.toml` in Notepad. Fill in your MT5 account
+   number and the Telegram keys, check the symbol names match your MT5 Market
+   Watch, then save.
+5. Double-click `chats.bat`. The first time it asks for your phone number and
+   a login code. Copy the group's name into `chat` in `config.toml`.
+6. Double-click `start.bat` to run the bot.
 
 The PC must stay on, awake and online, with MT5 open, for the bot to trade.
 
