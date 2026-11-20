@@ -1,0 +1,11 @@
+config.toml
+*.session
+*.session-journal
+state.json
+state.tmp
+signalbot.log
+backtest_notes.txt
+data/
+__pycache__/
+.pytest_cache/
+.venv/

@@ -1,0 +1,40 @@
+# Copy this file to config.toml and fill in the blanks.
+# config.toml stays on your PC; it is never uploaded to GitHub.
+
+[account]
+login = 0                 # your MT5 account number; the bot refuses any other account
+require_demo = true       # the bot only starts on a demo account while this is true
+initial_balance = 6000
+
+[rules]
+daily_stop = 140          # bot closes everything and stops for the day at this loss
+max_loss_stop = 320       # bot closes everything and stops for good at this total loss
+max_signals_per_day = 6
+max_open_signals = 2
+min_hold_seconds = 30     # no profit is taken on a trade younger than this
+
+[risk]
+risk_per_signal = 40      # most one signal may lose, in dollars
+reduced_risk_factor = 0.5 # "High Risk" and "Small Lot" signals risk this fraction
+max_tps = 5               # use at most this many targets, nearest first
+breakeven_after_tp = 1    # move the stop to entry after this many targets; 0 = never
+
+[session]                 # times are your broker's server time (the clock in MT5 Market Watch)
+no_new_trades_after = "22:00"
+close_all_at = "23:00"
+max_signal_age_seconds = 20
+
+[telegram]                # from https://my.telegram.org -> API development tools
+api_id = 0
+api_hash = ""
+chat = ""                 # the group's name exactly as shown in Telegram
+
+[symbols.XAUUSD]          # gold
+broker_symbol = "XAUUSD"  # the name in your MT5 Market Watch
+max_entry_deviation = 1.5 # skip if price is more than $1.50 outside the signal's entry
+max_slippage = 0.5
+
+[symbols.NAS100]          # Nasdaq
+broker_symbol = "NAS100"
+max_entry_deviation = 8
+max_slippage = 3
